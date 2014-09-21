@@ -1,4 +1,5 @@
 makeCacheMatrix <- function(x = matrix()){
+    
     iv <- matrix()       
     
     set <- function(y) {
@@ -20,11 +21,15 @@ makeCacheMatrix <- function(x = matrix()){
 
 
 cacheSolve <- function(x = list()){
+
     iv <-x$getinverse()
+
     if(!is.na(iv)){
         message("getting cashed data")
         return(iv)
     }
+
     data <- x$get()
     iv <- solve(data)
+
 }
